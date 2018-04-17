@@ -32,6 +32,5 @@ public class BikeHandler : MonoBehaviour {
             m.motorSpeed -= minPower / 50;
         }
         wheel.motor = m;
-
 	}
 }

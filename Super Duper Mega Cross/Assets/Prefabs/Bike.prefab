@@ -322,8 +322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enginePower: 200
-  maxPowerForward: 1000
-  maxPowerBackwards: 500
+  maxPower: 0
+  minPower: 0
   wheel: {fileID: 235138894771274902}
 --- !u!212 &212316199407450276
 SpriteRenderer:
