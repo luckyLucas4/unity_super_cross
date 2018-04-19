@@ -7,8 +7,9 @@ public class BikeHandler : MonoBehaviour {
     public float enginePower = 100;
     public float maxPower = 1500;
     public float minPower = -500;
+    public float torque = 50;
+    public float maxTorque = 200;
     public WheelJoint2D wheel;
-    public 
 
     private JointMotor2D m;
     private Rigidbody2D rb;
@@ -20,7 +21,7 @@ public class BikeHandler : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         if(Input.GetAxis("Vertical") != 0 && m.motorSpeed < maxPower && m.motorSpeed > minPower)
         {
             m.motorSpeed += enginePower * Input.GetAxis("Vertical");
@@ -35,6 +36,9 @@ public class BikeHandler : MonoBehaviour {
         }
         wheel.motor = m;
 
-        rb.AddTorque(20);
+        if(rb.angularVelocity < maxTorque && rb.angularVelocity > -maxTorque)
+        {
+            rb.AddTorque(torque * -Input.GetAxis("Horizontal"));
+        }
 	}
 }
