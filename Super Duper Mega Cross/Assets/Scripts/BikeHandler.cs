@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class BikeHandler : MonoBehaviour {
 
-    public float enginePower;
-    public float maxPower;
-    public float minPower;
+    public float enginePower = 100;
+    public float maxPower = 1500;
+    public float minPower = -500;
     public WheelJoint2D wheel;
+    public 
 
     private JointMotor2D m;
+    private Rigidbody2D rb;
 
 	// Use this for initialization
 	void Start () {
-        
+        rb = gameObject.GetComponent<Rigidbody2D>();
         m = wheel.motor;
 	}
 	
@@ -32,5 +34,7 @@ public class BikeHandler : MonoBehaviour {
             m.motorSpeed -= minPower / 50;
         }
         wheel.motor = m;
+
+        rb.AddTorque(20);
 	}
 }

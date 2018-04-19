@@ -140,7 +140,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -321,9 +321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f290660b91ff845ae3940403464750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enginePower: 200
-  maxPower: 0
-  minPower: 0
+  enginePower: 100
+  maxPower: 1400
+  minPower: -500
   wheel: {fileID: 235138894771274902}
 --- !u!212 &212316199407450276
 SpriteRenderer:
