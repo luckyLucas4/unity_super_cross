@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonColorBlock:
     m_NormalColor: {r: 0.4705882, g: 0.4705882, b: 0.4705882, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.8088235, b: 0.9630832, a: 1}
-    m_PressedColor: {r: 0.87474656, g: 0.52205884, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.7941176, g: 0.5805274, b: 0.1985294, a: 1}
+    m_PressedColor: {r: 0.5588235, g: 0.39231002, b: 0.09450691, a: 1}
     m_DisabledColor: {r: 0.56114835, g: 0.6628893, b: 0.71323526, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -27,4 +27,4 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0
   font: {fileID: 12800000, guid: b51a3e520f9164da198dc59c8acfccd6, type: 3}
-  textColor: {r: 1, g: 1, b: 1, a: 1}
+  textColor: {r: 0.8602941, g: 0.8602941, b: 0.8602941, a: 1}
