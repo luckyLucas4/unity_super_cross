@@ -13,7 +13,9 @@ public class StartOptions : MonoBehaviour {
 	public bool changeScenes;											//If true, load a new scene when Start is pressed, if false, fade out UI and continue in single scene
 	public bool changeMusicOnStart;										//Choose whether to continue playing menu music or start a new music clip
     public CanvasGroup fadeOutImageCanvasGroup;                         //Canvas group used to fade alpha of image which fades in before changing scenes
-    public Image fadeImage;                                             //Reference to image used to fade out before changing scenes
+    public Image fadeImage;
+
+    public GameObject selectedBike;
 
 	[HideInInspector] public bool inMainMenu = true;					//If true, pause button disabled in main menu (Cancel in input manager, default escape key)
 	[HideInInspector] public AnimationClip fadeAlphaAnimationClip;		//Animation clip fading out UI elements alpha
@@ -23,8 +25,11 @@ public class StartOptions : MonoBehaviour {
 	private float fastFadeIn = .01f;									//Very short fade time (10 milliseconds) to start playing music immediately without a click/glitch
 	private ShowPanels showPanels;										//Reference to ShowPanels script on UI GameObject, to show and hide panels
     private CanvasGroup menuCanvasGroup;
-    public int selectedBike = 0;
 
+    public void SetBikePrefab (GameObject prefab)
+    {
+        selectedBike = prefab;
+    }
 
     void Awake()
 	{
@@ -39,12 +44,6 @@ public class StartOptions : MonoBehaviour {
 
         fadeImage.color = menuSettingsData.sceneChangeFadeColor;
 	}
-
-    public void BikeClick (int bike)
-    {
-        selectedBike = bike;
-    }
-
 
 	public void StartButtonClicked()
 	{
