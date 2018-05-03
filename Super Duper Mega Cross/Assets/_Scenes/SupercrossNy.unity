@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 719518001}
   - component: {fileID: 719518002}
   m_Layer: 0
-  m_Name: Box
+  m_Name: "V\xE4nster"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1544,7 +1544,7 @@ GameObject:
   - component: {fileID: 2092922621}
   - component: {fileID: 2092922622}
   m_Layer: 0
-  m_Name: Box2
+  m_Name: "H\xF6ger"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
