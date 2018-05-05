@@ -207,7 +207,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1347300953139818}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b38fa46ab8ad71b42be8daf26cf094c2, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -309,7 +309,7 @@ MonoBehaviour:
   maxPower: 1400
   minPower: -500
   torque: 50
-  maxTorque: 200
+  maxTorque: 300
   wheel: {fileID: 235872598817557640}
 --- !u!212 &212172462730504608
 SpriteRenderer:
