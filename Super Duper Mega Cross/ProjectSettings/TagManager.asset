@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - MainMenu
+  - CM Camera
+  - FilmingPosition
+  - Second Camera
   layers:
   - Default
   - TransparentFX

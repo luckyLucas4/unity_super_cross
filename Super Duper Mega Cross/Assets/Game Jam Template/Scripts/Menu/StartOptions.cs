@@ -90,8 +90,19 @@ public class StartOptions : MonoBehaviour {
 		if (menuSettingsData.musicLoopToChangeTo != null)
 		{
 			playMusic.PlayLevelMusic ();
-		}	
+		}
+        if(scene.buildIndex == 1)
+        {
+            SpawnBike(selectedBike, scene);
+        }
 	}
+
+    void SpawnBike(GameObject bike, Scene scene)
+    {
+        GameObject[] goArray = scene.GetRootGameObjects();
+
+        goArray[0].GetComponent<SpawnBike>().SpawnObject(bike);
+    }
 
 
 	public void LoadDelayed()
