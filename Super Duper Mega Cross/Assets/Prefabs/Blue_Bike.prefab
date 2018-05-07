@@ -324,8 +324,8 @@ MonoBehaviour:
   enginePower: 100
   maxPower: 1400
   minPower: -500
-  torque: 50
-  maxTorque: 200
+  torque: 25
+  maxTorque: 300
   wheel: {fileID: 235138894771274902}
 --- !u!212 &212316199407450276
 SpriteRenderer:
