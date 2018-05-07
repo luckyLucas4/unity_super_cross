@@ -58,5 +58,13 @@ public class Pause : MonoBehaviour {
 		showPanels.HidePausePanel ();
 	}
 
+    public void Restart()
+    {
 
+    }
+
+    public void Return()
+    {
+
+    }
 }
