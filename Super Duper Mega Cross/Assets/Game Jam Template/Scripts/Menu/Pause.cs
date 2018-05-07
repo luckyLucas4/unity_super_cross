@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Pause : MonoBehaviour {
@@ -60,11 +61,22 @@ public class Pause : MonoBehaviour {
 
     public void Restart()
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Return()
     {
+        UnPause();
+        showPanels.HidePausePanel();
 
+        int buildIndex = gameObject.GetComponent<StartOptions>().sceneToStart;
+        GameObject[] goArray = SceneManager.GetSceneByBuildIndex(buildIndex).GetRootGameObjects();
+
+        if (goArray[0].GetComponent<UnloadLevel>() != null)
+        {
+            goArray[0].GetComponent<UnloadLevel>().Unload();
+        }
+        SceneManager.LoadScene(0);
+        showPanels.ShowMenu();
     }
 }

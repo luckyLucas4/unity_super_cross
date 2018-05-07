@@ -91,17 +91,23 @@ public class StartOptions : MonoBehaviour {
 		{
 			playMusic.PlayLevelMusic ();
 		}
-        if(scene.buildIndex == 1)
-        {
-            SpawnBike(selectedBike, scene);
-        }
-	}
+        //if(scene.buildIndex != 0)
+        //{
+        //    SpawnBike(selectedBike, scene);
+        //}
+        SpawnBike(selectedBike, scene);
+    }
 
+    //Letar på objektet där motorcykeln ska skapas och anropar funktionen
     void SpawnBike(GameObject bike, Scene scene)
     {
         GameObject[] goArray = scene.GetRootGameObjects();
 
-        goArray[0].GetComponent<SpawnBike>().SpawnObject(bike);
+        if(goArray[0].GetComponent<SpawnBike>() != null)
+        {
+            Debug.Log(bike);
+            goArray[0].GetComponent<SpawnBike>().SpawnObject(bike);
+        }   
     }
 
 
@@ -164,4 +170,13 @@ public class StartOptions : MonoBehaviour {
 		//Play second music clip from MenuSettings
 		playMusic.PlaySelectedMusic (menuSettingsData.musicLoopToChangeTo);
 	}
+
+    private void Update()
+    {
+        GameObject[] menus = GameObject.FindGameObjectsWithTag("MainMenu");
+        if (menus.Length > 1)
+        {
+            Destroy(menus[1]);
+        }
+    }
 }

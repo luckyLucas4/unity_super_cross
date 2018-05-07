@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 314874675}
   m_Layer: 0
   m_Name: CM vcam2
-  m_TagString: Player
+  m_TagString: CM Camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1615,7 +1615,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1364400479}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.43, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1739,6 +1739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2037051476}
   - component: {fileID: 2037051477}
+  - component: {fileID: 2037051478}
   m_Layer: 0
   m_Name: "OBS M\xE5ste vara \xF6verst!"
   m_TagString: Respawn
@@ -1770,6 +1771,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816d6148dc30086418cf3e7b1cf7f934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  filmare: {fileID: 1364400479}
+--- !u!114 &2037051478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2037051475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904d631c409cce547b53b5d63405ea41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taBort:
+  - Player
 --- !u!1 &2092922620
 GameObject:
   m_ObjectHideFlags: 0

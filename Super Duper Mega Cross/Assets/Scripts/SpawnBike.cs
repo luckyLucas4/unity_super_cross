@@ -5,25 +5,24 @@ using Cinemachine;
 
 public class SpawnBike : MonoBehaviour {
 
+    public GameObject filmare;
+
     public void SpawnObject(GameObject bike)
     {
-        GameObject newBike = Instantiate(bike, transform);
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            obj.SetActive(false);
+        }
 
-       
-        GameObject.FindGameObjectWithTag("FilmingPosition").transform.parent = newBike.transform;
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("EditorOnly"))
         {
             obj.SetActive(false);
         }
-    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        GameObject newBike = Instantiate(bike, transform);
+
+        newBike.transform.parent = null;
+
+        filmare.transform.parent = newBike.transform;
+    }
 }
