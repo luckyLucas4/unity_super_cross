@@ -105,7 +105,6 @@ public class StartOptions : MonoBehaviour {
 
         if(goArray[0].GetComponent<SpawnBike>() != null)
         {
-            Debug.Log(bike);
             goArray[0].GetComponent<SpawnBike>().SpawnObject(bike);
         }   
     }
@@ -159,7 +158,6 @@ public class StartOptions : MonoBehaviour {
         }
 
         HideDelayed();
-        Debug.Log("Coroutine done. Game started in same scene! Put your game starting stuff here.");
     }
 
 
