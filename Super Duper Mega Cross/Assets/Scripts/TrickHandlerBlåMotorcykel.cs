@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrickHandlerBlå : MonoBehaviour
+public class TrickHandlerBlåMotorcykel : MonoBehaviour
 {
 
     public Sprite orginal;
     public Sprite trick;
+    public Sprite trick2;
     private Sprite temp;
 
 
@@ -26,6 +27,10 @@ public class TrickHandlerBlå : MonoBehaviour
         if (Input.GetKey(KeyCode.Z))
         {
             temp = trick;
+        }
+        else if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.Space))
+        {
+            temp = trick2;
         }
         else
         {
