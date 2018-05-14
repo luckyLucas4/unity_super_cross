@@ -5,11 +5,16 @@ public class Score : MonoBehaviour {
 
     public Transform player;
     public Text scoreText;
-    private int maxScore;
+    private int maxScore = 0;
 
 	// Update is called once per frame
 	void Update () {
-        player.position.x.
-        scoreText.text = player.position.x.ToString("0");
+        int playerX = (int)player.position.x;
+        if (playerX > maxScore)
+        {
+            maxScore = playerX;
+        }
+
+        scoreText.text = maxScore.ToString("0");
 	}
 }
