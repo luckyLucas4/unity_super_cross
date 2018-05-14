@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrickHandlerBlå : MonoBehaviour
+public class TrickHandlerBlåMotorcykel : MonoBehaviour
 {
 
     public Sprite orginal;
