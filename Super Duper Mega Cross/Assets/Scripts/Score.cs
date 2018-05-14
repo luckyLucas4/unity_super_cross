@@ -9,7 +9,7 @@ public class Score : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        int playerX = (int)player.position.x;
+        int playerX = (int)player.position.x + 5;
         if (playerX > maxScore)
         {
             maxScore = playerX;
