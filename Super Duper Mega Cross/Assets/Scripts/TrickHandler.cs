@@ -6,6 +6,7 @@ public class TrickHandler : MonoBehaviour {
 
     public Sprite orginal;
     public Sprite trick;
+    public Sprite trick2;
     private Sprite temp;
 
 
@@ -23,6 +24,10 @@ public class TrickHandler : MonoBehaviour {
         if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Space))
         {
             temp = trick;
+        }
+        else if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.Space))
+        {
+            temp = trick2;
         }
         else
         {
