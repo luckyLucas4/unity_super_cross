@@ -58,23 +58,32 @@ public class Pause : MonoBehaviour {
 		showPanels.HidePausePanel ();
 	}
 
+    // Laddar om scenen
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    // Återvänder till huvudmenyn
     public void Return()
     {
+        // Återställer paus-menyn
         UnPause();
         showPanels.HidePausePanel();
 
+        // Hittar index för scenen som har laddats
         int buildIndex = gameObject.GetComponent<StartOptions>().sceneToStart;
+
+        // Samlar alla objekt i den scenen
         GameObject[] goArray = SceneManager.GetSceneByBuildIndex(buildIndex).GetRootGameObjects();
 
+        // Om det första objektet har ett UnloadLevel-script ska vi köra det
         if (goArray[0].GetComponent<UnloadLevel>() != null)
         {
             goArray[0].GetComponent<UnloadLevel>().Unload();
         }
+
+        // Laddar och visar huvudmenyn
         SceneManager.LoadScene(0);
         showPanels.ShowMenu();
     }

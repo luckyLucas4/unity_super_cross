@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BikeHandler : MonoBehaviour {
 
-
-
     // Ändrar hur snabbt motorns kraft ökar
     public float enginePower = 100;
 
@@ -20,18 +18,31 @@ public class BikeHandler : MonoBehaviour {
     // Referens till hjulet
     public WheelJoint2D wheel;
 
+    public AudioSource engineSource;
+    public AudioClip engineDriving;
+    public AudioClip engineIdling;
+    public float pitchRange = 0.2f;
+
+    private AudioSource source;
+    private float originalPitch;
+
     // En referenser som används senare
     private Rigidbody2D rb;
     private JointMotor2D m;
+
 
 	// Anropas när spelet startar
 	void Awake () {
         // rb tilldelas objektets Rigidbody2D-komponent
         rb = gameObject.GetComponent<Rigidbody2D>();
 
-        //  m fåren kopia av motorn på vår WheelJoint2D
+        //  m får en kopia av motorn på vår WheelJoint2D
         m = wheel.motor;
-	}
+
+        originalPitch = engineSource.pitch;
+        engineSource.Play();
+
+    }
 	
     // Anropas med jämna mellanrum
 	void FixedUpdate () {
@@ -54,6 +65,25 @@ public class BikeHandler : MonoBehaviour {
         }
         // m kopieras till hjulets motor, 
         wheel.motor = m;
+
+        if(Mathf.Abs(Input.GetAxis("Vertical")) < 0.6f)
+        {
+            if(engineSource.clip == engineDriving)
+            {
+                engineSource.clip = engineIdling;
+                engineSource.pitch = Random.Range(originalPitch - pitchRange, originalPitch + pitchRange);
+                engineSource.Play();
+            }
+        }
+        else
+        {
+            if(engineSource.clip == engineIdling)
+            {
+                engineSource.clip = engineDriving;
+                engineSource.pitch = Random.Range(originalPitch - pitchRange, originalPitch + pitchRange);
+                engineSource.Play();
+            }
+        }
 
         // Om rotationshastigheten är inom de tillåtna gränserna
         if(rb.angularVelocity < maxTorque && rb.angularVelocity > -maxTorque)

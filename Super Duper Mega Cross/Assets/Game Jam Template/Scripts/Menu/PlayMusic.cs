@@ -27,21 +27,16 @@ public class PlayMusic : MonoBehaviour {
 
 	public void PlayLevelMusic()
 	{
-		//This switch looks at the last loadedLevel number using the scene index in build settings to decide which music clip to play.
-		switch (SceneManager.GetActiveScene().buildIndex)
-		{
-			//If scene index is 0 (usually title scene) assign the clip titleMusic to musicSource
-			case 0:
-				musicSource.clip = menuSettings.mainMenuMusicLoop;
-				break;
-			//If scene index is 1 (usually main scene) assign the clip mainMusic to musicSource
-			case 1:
-                Debug.Log("Scene index is 1, setting music to " + menuSettings.musicLoopToChangeTo);
-				musicSource.clip = menuSettings.musicLoopToChangeTo;
-				break;
-
-		}
-
+        //This switch looks at the last loadedLevel number using the scene index in build settings to decide which music clip to play.
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            //If scene index is 0 (usually title scene) assign the clip titleMusic to musicSource
+            musicSource.clip = menuSettings.mainMenuMusicLoop;
+        }
+        else
+        {
+            musicSource.clip = menuSettings.musicLoopToChangeTo;
+        }
 
 		//Fade up the volume very quickly, over resetTime seconds (.01 by default)
 		FadeUp (resetTime);
