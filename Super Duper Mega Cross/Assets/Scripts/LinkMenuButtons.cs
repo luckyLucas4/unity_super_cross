@@ -6,17 +6,7 @@ using UnityEngine.SceneManagement;
 public class LinkMenuButtons : MonoBehaviour {
 
     // En referens till scriptet för att pausa på huvudmenyn
-    private Pause mainMenuPause;
-
-    private void Awake()
-    {
-        // Om huvudmenyn har laddats kan vi hämta scriptet
-        if(SceneManager.GetSceneByBuildIndex(0).isLoaded)
-        {
-            mainMenuPause = StartOptions.startOptions.GetComponent<Pause>();
-        }
-
-    }
+    public Pause mainMenuPause;
 
     // Startar om scenen
     public void Restart()

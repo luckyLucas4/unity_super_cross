@@ -124,10 +124,12 @@ public class StartOptions : MonoBehaviour {
     {
         GameObject[] goArray = scene.GetRootGameObjects();
 
-        if(goArray[0].GetComponent<SpawnBike>() != null)
+        SpawnBike topObjectScript = goArray[0].GetComponent<SpawnBike>();
+        if (topObjectScript != null)
         {
-            goArray[0].GetComponent<SpawnBike>().SpawnObject(bike);
-        }   
+            topObjectScript.mainMenuPause = gameObject.GetComponent<Pause>();
+            topObjectScript.SpawnObject(bike);
+        }
     }
 
 

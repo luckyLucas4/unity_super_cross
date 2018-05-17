@@ -9,8 +9,11 @@ public class SpawnBike : MonoBehaviour {
     public GameObject filmare;
 
     // Scripten på Score och Timer texterna
-    public Score scoreText;
-    public Timer timerText;
+    public LinkMenuButtons menuLink;
+    public Score score;
+    public Timer timer;
+
+    public Pause mainMenuPause;
 
     // Anropas när banan ska laddas
     public void SpawnObject(GameObject bike)
@@ -27,7 +30,7 @@ public class SpawnBike : MonoBehaviour {
             obj.SetActive(false);
         }
 
-        // Skapar en ny motorcykeli den här punkten
+        // Skapar en ny motorcykel i den här punkten
         GameObject newBike = Instantiate(bike, transform);
 
         // Cykeln ska inte vara ett barn under det här objektet
@@ -37,7 +40,9 @@ public class SpawnBike : MonoBehaviour {
         filmare.transform.parent = newBike.transform;
 
         // Länkar spelaren till scripten som sitter på canvas-objektet
-        timerText.player = newBike.transform;
-        scoreText.player = newBike.transform;
+        menuLink.mainMenuPause = mainMenuPause;
+        score.player = newBike.transform;
+        timer.player = newBike.transform;
+        timer.engineSound = newBike.GetComponent<AudioSource>();
     }
 }

@@ -35,7 +35,6 @@ public class Pause : MonoBehaviour {
 			//Call the UnPause function to unpause the game
 			UnPause ();
 		}
-        Debug.Log(Time.timeScale);
 	}
 
 

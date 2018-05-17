@@ -4,15 +4,17 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour {
 
     public Transform player;
-    public Text scoreText;
     public Timer timer;
 
+    [HideInInspector] public Text scoreText;
+    [HideInInspector] public int maxScore = 0;
     private int playerStartX;
-    private int maxScore = 0;
 
     private void Start()
     {
+        scoreText = gameObject.GetComponent<Text>();
         playerStartX = (int)player.position.x;
+        scoreText.text = maxScore.ToString("0");
     }
     
     void Update () {
@@ -22,8 +24,12 @@ public class Score : MonoBehaviour {
         if (playerX > maxScore && !timer.hasWon)
         {
             maxScore = playerX;
+            scoreText.text = maxScore.ToString("0");
         }
-
-        scoreText.text = maxScore.ToString("0");
 	}
+
+    public void SetScore(string text)
+    {
+        scoreText.text = text;
+    }
 }
