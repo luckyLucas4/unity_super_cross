@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
     private float timeLeft;
     public Text timeText;
+    public float startTime = 45;
+    public GameObject pausePanel;
 
 	// Use this for initialization
 	void Start () {
-        timeLeft = 45;
+        timeLeft = startTime;
+
 	}
 	
 	// Update is called once per frame
@@ -17,5 +20,12 @@ public class Timer : MonoBehaviour {
         timeLeft -= Time.deltaTime;
 
         timeText.text = timeLeft.ToString("0");
+
+        if (timeLeft <= 0)
+        {
+            Time.timeScale = 0;
+            pausePanel.SetActive(true);
+            timeText.text = " ";
+        }
     }
 }
