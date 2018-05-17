@@ -7,6 +7,7 @@ public class SpawnBike : MonoBehaviour {
 
     // Ett spelobjekt som kameran kan följa
     public GameObject filmare;
+    public Score scoreText;
 
     // Anropas när banan ska laddas
     public void SpawnObject(GameObject bike)
@@ -34,5 +35,7 @@ public class SpawnBike : MonoBehaviour {
         // Filmaren blir ett barn till motorcykeln, följer med den
 
         filmare.transform.parent = newBike.transform;
+
+        scoreText.player = newBike.transform;
     }
 }
