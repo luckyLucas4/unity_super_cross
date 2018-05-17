@@ -4,6 +4,8 @@ using System.Collections;
 
 public class Pause : MonoBehaviour {
 
+    // En länk till quit-scriptet
+    public QuitApplication quitScript;
 
 	private ShowPanels showPanels;						//Reference to the ShowPanels script used to hide and show UI panels
 	private bool isPaused;								//Boolean to check if the game is paused or not
@@ -33,7 +35,7 @@ public class Pause : MonoBehaviour {
 			//Call the UnPause function to unpause the game
 			UnPause ();
 		}
-	
+        Debug.Log(Time.timeScale);
 	}
 
 
@@ -61,6 +63,7 @@ public class Pause : MonoBehaviour {
     // Laddar om scenen
     public void Restart()
     {
+        UnPause();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -86,5 +89,11 @@ public class Pause : MonoBehaviour {
         // Laddar och visar huvudmenyn
         SceneManager.LoadScene(0);
         showPanels.ShowMenu();
+    }
+
+    // Använder quit-metoden på quit-scriptet som ligger
+    public void Quit()
+    {
+        quitScript.Quit();
     }
 }

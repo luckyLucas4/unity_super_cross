@@ -7,7 +7,10 @@ public class SpawnBike : MonoBehaviour {
 
     // Ett spelobjekt som kameran kan följa
     public GameObject filmare;
+
+    // Scripten på Score och Timer texterna
     public Score scoreText;
+    public Timer timerText;
 
     // Anropas när banan ska laddas
     public void SpawnObject(GameObject bike)
@@ -25,17 +28,16 @@ public class SpawnBike : MonoBehaviour {
         }
 
         // Skapar en ny motorcykeli den här punkten
-
         GameObject newBike = Instantiate(bike, transform);
 
         // Cykeln ska inte vara ett barn under det här objektet
-
         newBike.transform.parent = null;
 
         // Filmaren blir ett barn till motorcykeln, följer med den
-
         filmare.transform.parent = newBike.transform;
 
+        // Länkar spelaren till scripten som sitter på canvas-objektet
+        timerText.player = newBike.transform;
         scoreText.player = newBike.transform;
     }
 }

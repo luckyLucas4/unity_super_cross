@@ -7,6 +7,25 @@ using UnityEngine.UI;
 
 public class StartOptions : MonoBehaviour {
 
+    // Ett statiskt script kan användas av alla andra klasser
+    public static StartOptions startOptions;
+
+    // Vi vill inte ha flera statiska script av samma typ
+    void MakeThisTheOnlyStartOptions()
+    {
+        if (startOptions == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            startOptions = this;
+        }
+        else
+        {
+            if (startOptions != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 
     public MenuSettings menuSettingsData;
 	public int sceneToStart = 1;										//Index number in build settings of scene to load if changeScenes is true
@@ -33,8 +52,10 @@ public class StartOptions : MonoBehaviour {
 
     void Awake()
 	{
-		//Get a reference to ShowPanels attached to UI object
-		showPanels = GetComponent<ShowPanels> ();
+        MakeThisTheOnlyStartOptions();
+
+        //Get a reference to ShowPanels attached to UI object
+        showPanels = GetComponent<ShowPanels> ();
 
 		//Get a reference to PlayMusic attached to UI object
 		playMusic = GetComponent<PlayMusic> ();

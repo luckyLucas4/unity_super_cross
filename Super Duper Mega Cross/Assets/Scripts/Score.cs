@@ -5,6 +5,7 @@ public class Score : MonoBehaviour {
 
     public Transform player;
     public Text scoreText;
+    public Timer timer;
 
     private int playerStartX;
     private int maxScore = 0;
@@ -13,11 +14,12 @@ public class Score : MonoBehaviour {
     {
         playerStartX = (int)player.position.x;
     }
-
-    // Update is called once per frame
+    
     void Update () {
+
         int playerX = (int)player.position.x - playerStartX;
-        if (playerX > maxScore)
+
+        if (playerX > maxScore && !timer.hasWon)
         {
             maxScore = playerX;
         }
