@@ -21,11 +21,11 @@ public class TrickHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.K))
         {
             temp = trick;
         }
-        else if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.Space))
+        else if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.L))
         {
             temp = trick2;
 
