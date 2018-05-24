@@ -51,7 +51,7 @@ public class Timer : MonoBehaviour {
             engineSound.Stop();
             winPanel.SetActive(true);
         }
-        else if (timeLeft <= 0)
+        else if (timeLeft <= 0 && !hasWon)
         {
             SetTexts();
             Time.timeScale = 0;

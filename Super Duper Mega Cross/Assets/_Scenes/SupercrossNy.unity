@@ -1890,7 +1890,7 @@ Prefab:
     - target: {fileID: 114723569014471418, guid: 836a3ff533bba2146ad22fc9d05e8888,
         type: 2}
       propertyPath: maxDistance
-      value: 207
+      value: 210
       objectReference: {fileID: 0}
     - target: {fileID: 114723569014471418, guid: 836a3ff533bba2146ad22fc9d05e8888,
         type: 2}
