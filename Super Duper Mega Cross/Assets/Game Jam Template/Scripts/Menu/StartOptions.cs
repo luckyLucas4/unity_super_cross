@@ -112,10 +112,6 @@ public class StartOptions : MonoBehaviour {
 		{
 			playMusic.PlayLevelMusic ();
 		}
-        //if(scene.buildIndex != 0)
-        //{
-        //    SpawnBike(selectedBike, scene);
-        //}
         SpawnBike(selectedBike, scene);
     }
 
@@ -124,12 +120,20 @@ public class StartOptions : MonoBehaviour {
     {
         GameObject[] goArray = scene.GetRootGameObjects();
 
-        SpawnBike topObjectScript = goArray[0].GetComponent<SpawnBike>();
-        if (topObjectScript != null)
+        foreach (GameObject obj in goArray)
         {
-            topObjectScript.mainMenuPause = gameObject.GetComponent<Pause>();
-            topObjectScript.SpawnObject(bike);
+            if (obj.GetComponent<SpawnBike>() != null)
+            {
+                obj.GetComponent<SpawnBike>().mainMenuPause = gameObject.GetComponent<Pause>();
+                obj.GetComponent<SpawnBike>().SpawnObject(bike);
+            }
         }
+        //SpawnBike topObjectScript = goArray[0].GetComponent<SpawnBike>();
+        //if (topObjectScript != null)
+        //{
+        //    topObjectScript.mainMenuPause = gameObject.GetComponent<Pause>();
+        //    topObjectScript.SpawnObject(bike);
+        //}
     }
 
 

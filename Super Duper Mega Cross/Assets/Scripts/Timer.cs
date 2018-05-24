@@ -55,6 +55,7 @@ public class Timer : MonoBehaviour {
         {
             SetTexts();
             Time.timeScale = 0;
+            engineSound.Stop();
             endPanel.SetActive(true);
         }
     }
