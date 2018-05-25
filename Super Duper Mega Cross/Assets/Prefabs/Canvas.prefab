@@ -804,6 +804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52b97b098e3ef3e40969834fa7f85e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuPause: {fileID: 0}
 --- !u!114 &114128436408480322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1438,8 +1439,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  scoreText: {fileID: 114758506311931868}
   timer: {fileID: 114555817959602970}
+  scoreText: {fileID: 114758506311931868}
+  maxScore: 0
 --- !u!114 &114430685383202062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1774,13 +1776,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd0d91a268acab4d912b6534fa1bcd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeText: {fileID: 114128488666716664}
   startTime: 60
   maxDistance: 50
+  scoreScript: {fileID: 0}
+  finalText: {fileID: 0}
   player: {fileID: 0}
   filmingPosition: {fileID: 0}
   winPanel: {fileID: 1142839930117888}
   endPanel: {fileID: 1646531149948540}
+  engineSound: {fileID: 0}
   hasWon: 0
 --- !u!114 &114563672499193992
 MonoBehaviour:
@@ -3007,7 +3011,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &224004573329896168
 RectTransform:

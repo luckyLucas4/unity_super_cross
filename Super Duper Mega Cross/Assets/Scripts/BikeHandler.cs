@@ -26,6 +26,8 @@ public class BikeHandler : MonoBehaviour {
     private AudioSource source;
     private float originalPitch;
 
+    public Timer timer;
+
     // En referenser som används senare
     private Rigidbody2D rb;
     private JointMotor2D m;
@@ -66,9 +68,11 @@ public class BikeHandler : MonoBehaviour {
         // m kopieras till hjulets motor, 
         wheel.motor = m;
 
+        // Om motorcykeln gasar eller bromsar
         if(Mathf.Abs(Input.GetAxis("Vertical")) < 0.6f)
         {
-            if(engineSource.clip == engineDriving)
+            // Om 
+            if(engineSource.clip == engineDriving && (timer == null || !timer.hasWon ))
             {
                 engineSource.clip = engineIdling;
                 engineSource.pitch = Random.Range(originalPitch - pitchRange, originalPitch + pitchRange);
@@ -77,7 +81,7 @@ public class BikeHandler : MonoBehaviour {
         }
         else
         {
-            if(engineSource.clip == engineIdling)
+            if(engineSource.clip == engineIdling && (timer == null || !timer.hasWon))
             {
                 engineSource.clip = engineDriving;
                 engineSource.pitch = Random.Range(originalPitch - pitchRange, originalPitch + pitchRange);

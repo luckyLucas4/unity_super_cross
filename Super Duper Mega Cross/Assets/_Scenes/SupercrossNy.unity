@@ -167,6 +167,10 @@ Prefab:
       propertyPath: timer
       value: 
       objectReference: {fileID: 1471755220}
+    - target: {fileID: 1838955403889280, guid: f72d96212f865fa4bb287a0531610187, type: 2}
+      propertyPath: m_Name
+      value: Respawn
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f72d96212f865fa4bb287a0531610187, type: 2}
   m_IsPrefabParent: 0
@@ -657,9 +661,9 @@ PolygonCollider2D:
       - {x: -6.660322, y: 0.4757373}
       - {x: -7.23728, y: 0.4757373}
       - {x: -7.247402, y: 0.4656152}
-      - {x: -10.314389, y: 0.4656152}
-      - {x: -10.334634, y: 0.45549315}
-      - {x: -10.334634, y: 0.435249}
+      - {x: -10.277593, y: 0.43885046}
+      - {x: -10.364743, y: 0.42538282}
+      - {x: -10.324599, y: 0.43190348}
       - {x: -10.304267, y: 0.4048828}
       - {x: -10.294146, y: -3.593335}
       - {x: -10.273901, y: -3.613579}
@@ -786,7 +790,8 @@ PolygonCollider2D:
       - {x: 10.141139, y: -2.4655063}
       - {x: 10.1101265, y: -0.2636076}
       - {x: 10.09979, y: 0.29462025}
-      - {x: 10.079114, y: 0.31529537}
+      - {x: 10.1088295, y: 0.30160853}
+      - {x: 9.980479, y: 0.31074613}
       - {x: 9.7793255, y: 0.36698315}
       - {x: 9.562237, y: 0.51170886}
       - {x: 9.396835, y: 0.69778484}
@@ -866,8 +871,8 @@ PolygonCollider2D:
       - {x: -7.9599156, y: 0.29462025}
       - {x: -8.425106, y: 0.2842827}
       - {x: -8.435443, y: 0.27394515}
-      - {x: -10.471941, y: 0.27394515}
-      - {x: -10.502954, y: 0.2636076}
+      - {x: -10.418931, y: 0.24778385}
+      - {x: -10.449945, y: 0.2374463}
       - {x: -10.471941, y: 0.21191983}
       - {x: -10.482279, y: -0.23259494}
       - {x: -10.513291, y: -1.1319621}
@@ -1074,8 +1079,8 @@ PolygonCollider2D:
       - {x: 9.621951, y: -2.3143406}
       - {x: 9.621951, y: -0.8031502}
       - {x: 9.632519, y: -0.79258245}
-      - {x: 9.632519, y: -0.28532967}
-      - {x: 9.600815, y: -0.25362638}
+      - {x: 9.619075, y: -0.29205316}
+      - {x: 9.573923, y: -0.28051978}
       - {x: 9.495137, y: -0.2430586}
       - {x: 9.315485, y: -0.19021979}
       - {x: 9.178104, y: -0.16908425}
@@ -1409,8 +1414,8 @@ PolygonCollider2D:
       - {x: 9.91858, y: -2.2869265}
       - {x: 9.91858, y: -0.0051391604}
       - {x: 9.928858, y: 0.0051391604}
-      - {x: 9.928858, y: 0.52933353}
-      - {x: 9.894267, y: 0.53117925}
+      - {x: 9.935523, y: 0.5160015}
+      - {x: 9.900933, y: 0.5178473}
       - {x: 5.6573052, y: 0.5304574}
       - {x: 5.5952115, y: 0.5342582}
       - {x: 5.4424424, y: 0.5821041}
@@ -1514,7 +1519,7 @@ PolygonCollider2D:
       - {x: -6.9038277, y: 0.53469944}
       - {x: -7.3728375, y: 0.53291076}
       - {x: -7.422737, y: 0.5311221}
-      - {x: -10.494165, y: 0.5396118}
+      - {x: -10.472685, y: 0.512764}
       - {x: -10.514722, y: 0.5190552}
       - {x: -10.514722, y: -1.0021362}
       - {x: -10.525001, y: -1.0124146}
@@ -1899,7 +1904,7 @@ Prefab:
     - target: {fileID: 114723569014471418, guid: 836a3ff533bba2146ad22fc9d05e8888,
         type: 2}
       propertyPath: startTime
-      value: 45
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1459787010735998, guid: 836a3ff533bba2146ad22fc9d05e8888, type: 2}
       propertyPath: m_IsActive
@@ -1943,6 +1948,26 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: 73.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363196412933796, guid: 836a3ff533bba2146ad22fc9d05e8888,
+        type: 2}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363196412933796, guid: 836a3ff533bba2146ad22fc9d05e8888,
+        type: 2}
+      propertyPath: m_BlockingObjects
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102809216298350, guid: 836a3ff533bba2146ad22fc9d05e8888,
+        type: 2}
+      propertyPath: firstSelectedObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114159848994666004, guid: 836a3ff533bba2146ad22fc9d05e8888,
+        type: 2}
+      propertyPath: firstSelectedObject
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 836a3ff533bba2146ad22fc9d05e8888, type: 2}

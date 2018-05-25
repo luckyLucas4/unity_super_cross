@@ -35,6 +35,7 @@ public class SpawnBike : MonoBehaviour {
 
         // Cykeln ska inte vara ett barn under det här objektet
         newBike.transform.parent = null;
+        newBike.GetComponent<BikeHandler>().timer = timer;
 
         // Filmaren blir ett barn till motorcykeln, följer med den
         filmare.transform.parent = newBike.transform;
