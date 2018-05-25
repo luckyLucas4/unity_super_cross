@@ -7,11 +7,22 @@ public class BikeSelector : MonoBehaviour {
 
     // Alla motorcyklar i menyn läggs till i fältet
     public Toggle[] bikeToggles;
+    private StartOptions startOptions;
 
     void Start() {
-        // "Klickar i" väljaren för första motorcykeln
-        bikeToggles[0].isOn = true;
-	}
+        // Hittar StartOptions-scriptet på huvudmenyn och sparar en referens i en lokal variabel
+        startOptions = GameObject.FindGameObjectWithTag("MainMenu").GetComponent<StartOptions>();
+
+        // "Klickar i" rätt väljare
+        if(startOptions.selectedBike.name == "DogOnBike")
+        {
+            bikeToggles[1].isOn = true;
+        }
+        else
+        {
+            bikeToggles[0].isOn = true;
+        }
+    }
 
     // Anropas av knappen som täcker motorcykeln, tar emot motorcykeln som parameter
     public void BikeChange (GameObject caller)
@@ -28,7 +39,6 @@ public class BikeSelector : MonoBehaviour {
 
     public void SetBike (GameObject bike)
     {
-        GameObject menu = GameObject.FindGameObjectWithTag("MainMenu");
-        menu.GetComponent<StartOptions>().selectedBike = bike;
+        startOptions.selectedBike = bike;
     }
 }

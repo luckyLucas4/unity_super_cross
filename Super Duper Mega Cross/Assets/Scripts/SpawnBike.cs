@@ -13,7 +13,7 @@ public class SpawnBike : MonoBehaviour {
     public Score score;
     public Timer timer;
 
-    public Pause mainMenuPause;
+    [HideInInspector] public Pause mainMenuPause;
 
     // Anropas när banan ska laddas
     public void SpawnObject(GameObject bike)

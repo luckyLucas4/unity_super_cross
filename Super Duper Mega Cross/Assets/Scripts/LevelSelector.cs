@@ -11,8 +11,13 @@ public class LevelSelector : MonoBehaviour {
     // Ett fält dit alla "Toggle" objekt länkas
     public Toggle[] levelToggles;
 
+    private StartOptions startOptions;
+
     private void Start()
     {
+        // Hittar StartOptions-scriptet
+        startOptions = GameObject.FindGameObjectWithTag("MainMenu").GetComponent<StartOptions>();
+
         // Markerar vår första "Toggle" och skickar in startvärdet
         ChangeLevelToggle(levelToggles[0]);
         ChangeLevel(levelSelected);
@@ -31,11 +36,10 @@ public class LevelSelector : MonoBehaviour {
         callerToggle.isOn = true;
     }
 
+    // Ändrar vilken scen som ska startas
     public void ChangeLevel(int level)
     {
-        // Hittar StartOptions-scriptet på huvudmenyn och väljer vilken scen den ska starta
-        GameObject menu = GameObject.FindGameObjectWithTag("MainMenu");
-        menu.GetComponent<StartOptions>().sceneToStart = level;
+        startOptions.sceneToStart = level;
     }
     
 }
