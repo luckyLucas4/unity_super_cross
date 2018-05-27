@@ -7,8 +7,11 @@ public class BikeSelector : MonoBehaviour {
 
     // Alla motorcyklar i menyn läggs till i fältet
     public Toggle[] bikeToggles;
+
+    // Här sparas en referens till StartOptions-scriptet 
     private StartOptions startOptions;
 
+    // Anropas när spelet startas
     void Start() {
         // Hittar StartOptions-scriptet på huvudmenyn och sparar en referens i en lokal variabel
         startOptions = GameObject.FindGameObjectWithTag("MainMenu").GetComponent<StartOptions>();
@@ -31,12 +34,11 @@ public class BikeSelector : MonoBehaviour {
         foreach (Toggle toggle in bikeToggles) {
             toggle.isOn = false;
         }
-        // "Klickar i" väljaren på första motorcykeln
+        // "Klickar i" väljaren som skickades som parameter
         caller.GetComponent<Toggle>().isOn = true;
     }
 
     //Ändrar den valda motorcykeln i StartOptions-scriptet på huvudmenyn
-
     public void SetBike (GameObject bike)
     {
         startOptions.selectedBike = bike;

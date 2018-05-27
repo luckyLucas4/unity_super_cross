@@ -8,7 +8,7 @@ public class CheckmarkHandler : MonoBehaviour {
     // Bilden som ska ändras
     public Image checkmark;
 
-	// Om väljaren har klickats ska bilden visas, annars görs den osynlig
+	// Om väljaren har klickats ska bocken på visas, annars görs den osynlig
 	void Update () {
         if (gameObject.GetComponent<Toggle>().isOn)
         {
@@ -17,7 +17,6 @@ public class CheckmarkHandler : MonoBehaviour {
         else
         {
             checkmark.enabled = false;
-        }
-		
+        }		
 	}
 }

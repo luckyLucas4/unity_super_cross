@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class LevelSelector : MonoBehaviour {
 
-    // Ett startvärde för scenen som ska startas
+    // Ett startvärde för scenen som ska laddas
     public int levelSelected = 1;
 
     // Ett fält dit alla "Toggle" objekt länkas
     public Toggle[] levelToggles;
 
+    // Här sparas en referens till StartOptions-scriptet
     private StartOptions startOptions;
 
+    // Anropas när spelet startas
     private void Start()
     {
         // Hittar StartOptions-scriptet
