@@ -19,8 +19,8 @@ public class TrickHandlerBlåMotorcykel : MonoBehaviour
     void Start()
     {
         temp = orginal; //När spelet laddas ut ska temp vara lika med original.  
-                        //Original är bunden till spriten där hunden sitter still.
-                        //Det hela gör så att den vanliga spriten används(den bild där hunden sitter still).
+                        //Original är bunden till spriten/bilden där hunden sitter still.
+                        //Det hela gör så att den vanliga spriten/bilden används(den bild där hunden sitter still).
     }
 
     // Detta uppdateras varje frame/bild
@@ -30,16 +30,16 @@ public class TrickHandlerBlåMotorcykel : MonoBehaviour
         if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.K))
         {
             temp = trick; //Om "Z", "Space" eller "K" trycks ner ändras temp till att vara lika med trick
-                          //Då byts den sprite där gubben sitter still ut mot den sprite där gubben gör det första tricket 
+                          //Då byts den sprite/bild där gubben sitter still ut mot den sprite/bild där gubben gör det första tricket 
         }
         else if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.L))
         {
             temp = trick2; //Om "X", "Space" eller "L" trycks ner ändras temp till att vara lika med trick
-                           //Då byts den sprite där gubben sitter still ut mot den sprite där gubben gör det andra tricket
+                           //Då byts den sprite/bild där gubben sitter still ut mot den sprite/bild där gubben gör det andra tricket
         }
         else //Om ingen av knapparna ovan trycks ner sker det nedan
         {
-            temp = orginal; //Denna rad gör så att den vanliga spriten där gubben sitter still visas
+            temp = orginal; //Denna rad gör så att den vanliga spriten där gubben sitter still återigen visas
         }
         gameObject.GetComponent<SpriteRenderer>().sprite = temp;
     }
